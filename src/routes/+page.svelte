@@ -248,6 +248,7 @@
             top:10rem;
         }
         .gallery{
+            display:none;
             position:absolute;
             box-sizing: border-box;
             top:43rem;
@@ -310,7 +311,7 @@
             left: 5%;
         }
         .nav-icons-wrapper-mobile{
-            margin-top:16rem;
+            margin-top:16px;
             display:flex;
             flex-direction:row;
             position:relative;
