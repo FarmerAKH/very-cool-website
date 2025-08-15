@@ -67,7 +67,6 @@
         display: flex;
         gap: 1rem;
         align-items: center;
-        right:1%;
     }
     .nav-icons-wrapper-mobile{
         display:none;
@@ -241,7 +240,7 @@
         .aboutMe{
             position:relative;
             height:auto;
-            top:4rem;
+            margin-top:35rem;
         }
         .courseFrame{
             position:relative;
@@ -249,7 +248,8 @@
         }
         .languagesFrame{
             position:relative;
-            top:12rem;
+            margin-top:4rem;
+            margin-bottom:16px;
         }
         
     }
