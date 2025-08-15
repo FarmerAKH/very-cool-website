@@ -56,17 +56,21 @@
         font-size: 20px;
         transition: color 0.55s;
     }
-    .nav-icons-wrapper {
-        margin-left: auto;
+    .nav-link-wrapper {
         display: flex;
-        gap: 0.5rem;
+        gap: 1rem;
         align-items: center;
     }
-    .nav-image {
-        display: block;
-        width: 2.5rem;
-        height: 2.5rem;
-        cursor: pointer;
+    .nav-icons-wrapper {
+        position:relative;
+        margin-left: auto;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        right:1%;
+    }
+    .nav-icons-wrapper-mobile{
+        display:none;
     }
     main{
         top:10px;
@@ -84,11 +88,10 @@
         background: #526fb1;
         color: #F6F6F6;
         position: fixed;
+        height: calc(100vh - 6rem);
         width: 100vw;
         top: 6rem;
         left: 0;
-        overflow:fixed;
-        height: calc(100vh - 6rem);
         background:repeating-linear-gradient(
             135deg,
             #526fb1,
@@ -137,13 +140,126 @@
         left:30%;
         top:-48.7rem;
     }
-
+    @media(min-width:768px){
+        .dropbtn{
+            display:none;
+        }
+        .dropdown{
+            display:none;
+        }
+        .dropdown-content{
+            display:none;
+        }
+    }
+    @media(max-width:767px){
+        header {
+            min-width:320px;
+        }
+        h1{
+            font-size:30px;
+        }
+         header {
+            min-width:320px;
+            overflow:visible;
+            justify-content: space-between;
+        }
+        h1{
+            font-size:30px;
+        }
+        .nav-link-wrapper {
+            display:none;
+        }
+        .nav-icons-wrapper{
+            display:none;
+        }
+        .nav-icons-wrapper-mobile{
+            margin-top:auto;
+            display:flex;
+            flex-direction:row;
+            position:relative;
+        }
+        .nav-icons-wrapper-mobile{
+            top:16rem;
+            gap:0.5rem;
+        }
+    }
+    @media (max-width:1700px) {
+        .dropbtn {
+            background-color: #223A70;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition:color 0.15s, background 0.55s;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right:0px;
+            background-color: #526fb1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: rgb(255, 255, 255);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {background-color: #526fb1; width:fit-content;}
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover, .dropbtn {
+            background-color: #243c74;
+        }
+        main#main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: calc(100vh - 6rem);
+        }
+        .userPFP, .aboutMe, .courseFrame, .languagesFrame  {
+            margin-right:auto;
+            width: 80%;
+            left: 5%;
+        }
+        .userPFP{
+            position:relative;
+            top:0.5rem;
+            padding:1rem;
+        }
+        .aboutMe{
+            position:relative;
+            height:auto;
+            top:4rem;
+        }
+        .courseFrame{
+            position:relative;
+            top:8rem;
+        }
+        .languagesFrame{
+            position:relative;
+            top:12rem;
+        }
+        
+    }
 </style>
 <header>
     <h1>Adam Ho</h1>
-    <a href="/" class="nav-link">Home</a>
-    <h2 class = "activeLink">About Me</h2>
-    <a href="/projects" class="nav-link">Projects</a>
+    <div class = "nav-link-wrapper">
+        <a href="/" class="nav-link">Home</a>
+        <h2 class = "activeLink">About Me</h2>
+        <a href="/projects" class="nav-link">Projects</a>
+    </div>
     <div class = "nav-icons-wrapper">
         <a href="https://www.instagram.com/farmerakh/" class="nav-image" target="_blank">
             <img src="/images/linkImages/instagram-white-icon.svg" alt="Instagram" style="width: 30px; height: 30px;">
@@ -154,6 +270,14 @@
         <a href="https://github.com/adamakh01" class="nav-image" target="_blank">
             <img src="\images\linkImages\github-mark-white.svg" alt="GitHub" style="width: 30px; height: 30px;">
         </a>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">&#9776</button>
+        <div class="dropdown-content">
+        <a href="/">Home</a>
+        <a href="/about">About Me</a>
+        <a href="/projects">Projects</a>
+        </div>
     </div>
 </header>
 <main id="main-content">
@@ -201,7 +325,17 @@
                 <li>Tkinter (Toolkit)</li>
             </ul>
     </div>
-
+    <div class = "nav-icons-wrapper-mobile">
+        <a href="https://www.instagram.com/farmerakh/" class="nav-image" target="_blank">
+            <img src="/images/linkImages/instagram-white-icon.svg" alt="Instagram" style="width: 30px; height: 30px;">
+        </a>
+        <a href="https://www.linkedin.com/in/adam-ho-a65786202" class="nav-image" target="_blank">
+            <img src="\images\linkImages\linkedin-app-white-icon.svg" alt="LinkedIn" style="width: 30px; height: 30px;">   
+        </a>
+        <a href="https://github.com/adamakh01" class="nav-image" target="_blank">
+            <img src="\images\linkImages\github-mark-white.svg" alt="GitHub" style="width: 30px; height: 30px;">
+        </a>
+    </div>
 </main>
 <main>
     <slot />

@@ -74,11 +74,20 @@
         font-size: 20px;
         transition: color 0.55s;
     }
+    .nav-link-wrapper {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
     .nav-icons-wrapper {
+        position:relative;
         margin-left: auto;
         display: flex;
         gap: 0.5rem;
         align-items: center;
+    }
+    .nav-icons-wrapper-mobile{
+        display:none;
     }
     .nav-image {
         display: block;
@@ -94,15 +103,20 @@
         color:#F6F6F6;
     }
     main#main-content {
+        position:absolute;
         display: flex;
         flex-direction: row;  
         padding-top: 0;
         background: #526fb1;
         color: #F6F6F6;
         position: fixed;
+        height: calc(100vh - 6rem);
+        min-height: calc(100vh - 80px);
         width: 100vw;
         top: 6rem;
         left: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
         background: 
         repeating-linear-gradient(
             135deg,
@@ -111,7 +125,6 @@
             #445b94 40px,
             #445b94 42px
         );
-        min-height: 100vh;
     }
     .intro{
         position:relative;
@@ -206,13 +219,156 @@
         text-align:center;
         padding: 1rem;
     }
-
+    @media(max-width:819px){
+        .gallery{
+            display:none;
+        }
+    }
+    @media(min-width:768px){
+        .dropbtn{
+            display:none;
+        }
+        .dropdown{
+            display:none;
+        }
+        .dropdown-content{
+            display:none;
+        }
+    }
+    @media(min-width:820px) and (max-width: 1700px) {
+        main#main-content {
+            display: flex;
+            flex-direction: column;
+        }
+        .intro, .recentProjects, .gallery {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .recentProjects{
+            top:10rem;
+        }
+        .gallery{
+            position:absolute;
+            box-sizing: border-box;
+            top:43rem;
+            width:1200px;
+            height:700px;
+            margin-top: 2rem;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:#445b94;
+            border-radius:2rem;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .gallery-left, .gallery-right {
+            position: absolute;
+            background:#223A70;
+            border-radius:2rem;
+            color: white;
+            border: none;
+            width:100px;
+            height:100px;
+            font-size:30px;
+            cursor: pointer;
+            transition:color 0.15s, background 0.55s;
+        }
+        .gallery-left{
+            left:-15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .gallery-right {
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    @media (max-width:760px) {
+        header {
+            min-width:320px;
+            overflow:visible;
+            justify-content: space-between;
+        }
+        h1{
+            font-size:30px;
+        }
+        .nav-link-wrapper {
+            display:none;
+        }
+        .nav-icons-wrapper{
+            display:none;
+        }
+        main#main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .intro, .recentProjects {
+            margin-right:auto;
+            width: 90%;
+            left: 5%;
+        }
+        .nav-icons-wrapper-mobile{
+            margin-top:auto;
+            display:flex;
+            flex-direction:row;
+            position:relative;
+        }
+        .dropbtn {
+            background-color: #223A70;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition:color 0.15s, background 0.55s;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right:0px;
+            background-color: #526fb1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: rgb(255, 255, 255);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {background-color: #526fb1; width:fit-content;}
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover, .dropbtn {
+            background-color: #243c74;
+        }
+        .intro{
+            position:relative;
+            top:-1.5rem;
+        }
+        .recentProjects{
+            position:relative;
+            top:-0.5rem;
+            height:auto;
+        }
+    }
 </style>
 <header>
     <h1>Adam Ho</h1>
-    <h2 class = "activeLink">Home</h2>
-        <a href="/about" class="nav-link">About Me</a>
-    <a href="/projects" class="nav-link">Projects</a>
+    <div class = "nav-link-wrapper">
+        <h2 class = "activeLink">Home</h2>
+        <a href="/about" class="nav-link activeLink">About Me</a>
+        <a href="/projects" class="nav-link">Projects</a>
+    </div>
     <div class = "nav-icons-wrapper">
         <a href="https://www.instagram.com/farmerakh/" class="nav-image" target="_blank">
             <img src="/images/linkImages/instagram-white-icon.svg" alt="Instagram" style="width: 30px; height: 30px;">
@@ -223,6 +379,14 @@
         <a href="https://github.com/adamakh01" class="nav-image" target="_blank">
             <img src="\images\linkImages\github-mark-white.svg" alt="GitHub" style="width: 30px; height: 30px;">
         </a>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">&#9776</button>
+        <div class="dropdown-content">
+        <a href="/">Home</a>
+        <a href="/about">About Me</a>
+        <a href="/projects">Projects</a>
+        </div>
     </div>
 </header>
 <main id="main-content">
@@ -248,5 +412,16 @@
         <p class = "description" style="margin:0.5rem; padding:1rem;">
             Portfolio website showcasing my projects and skills, as well as present my contact info. Built with Sveltekit (HTML, CSS, and JavaScript).
         </p>
+    </div>
+    <div class = "nav-icons-wrapper-mobile">
+        <a href="https://www.instagram.com/farmerakh/" class="nav-image" target="_blank">
+            <img src="/images/linkImages/instagram-white-icon.svg" alt="Instagram" style="width: 30px; height: 30px;">
+        </a>
+        <a href="https://www.linkedin.com/in/adam-ho-a65786202" class="nav-image" target="_blank">
+            <img src="\images\linkImages\linkedin-app-white-icon.svg" alt="LinkedIn" style="width: 30px; height: 30px;">   
+        </a>
+        <a href="https://github.com/adamakh01" class="nav-image" target="_blank">
+            <img src="\images\linkImages\github-mark-white.svg" alt="GitHub" style="width: 30px; height: 30px;">
+        </a>
     </div>
 </main>

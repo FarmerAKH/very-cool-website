@@ -56,11 +56,19 @@
         font-size: 20px;
         transition: color 0.55s;
     }
+    .nav-link-wrapper {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
     .nav-icons-wrapper {
         margin-left: auto;
         display: flex;
         gap: 0.5rem;
         align-items: center;
+    }
+    .nav-icons-wrapper-mobile{
+        display:none;
     }
     .nav-image {
         display: block;
@@ -80,6 +88,9 @@
         width: 100vw;
         top: 6rem;
         left: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: calc(100vh - 6rem);
     }
     .projectFrame {
         display:flex;
@@ -90,7 +101,7 @@
         top:7rem;
         box-sizing: border-box;
         width:500px;
-        height:450px;
+        height:auto;
         margin-top: 2rem;
         font-family: Arial, Helvetica, sans-serif;
         background-color:#445b94;
@@ -123,12 +134,109 @@
     .projectDescription{
         margin-top:3rem;
     }
+    @media(min-width:768px){
+        .dropbtn{
+            display:none;
+        }
+        .dropdown{
+            display:none;
+        }
+        .dropdown-content{
+            display:none;
+        }
+    }
+    @media (max-width:767px){
+        header {
+            min-width:320px;
+            overflow:visible;
+            justify-content: space-between;
+        }
+        h1{
+            font-size:30px;
+        }
+        .nav-link-wrapper {
+            display:none;
+        }
+        .nav-icons-wrapper{
+            display:none;
+        }
+        .dropbtn {
+            background-color: #223A70;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition:color 0.15s, background 0.55s;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right:0px;
+            background-color: #526fb1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: rgb(255, 255, 255);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {background-color: #526fb1; width:fit-content;}
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover, .dropbtn {
+            background-color: #243c74;
+        }
+        .nav-icons-wrapper-mobile{
+            margin-top:5px;
+            display:flex;
+            flex-direction:row;
+            position:relative;
+            top:40rem;
+        }
+    }
+    @media (max-width:768px) {
+        main#main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .projectFrame {
+            display:flex;
+            flex-direction:column;
+            justify-content: center;
+            position:relative;
+            top:36rem;
+            box-sizing: border-box;
+            width:80%;
+            height:auto;
+            margin-top: 2rem;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:#445b94;
+            border-radius:2rem;
+            text-align:center;
+            padding: 1rem;
+            left:5%;
+        }
+    
+
+    }
 </style>
 <header>
     <h1>Adam Ho</h1>
-    <a href = "/" class = "nav-link">Home</a>
-    <a href="/about" class="nav-link">About Me</a>
-    <h2 class = "activeLink">Projects</h2>
+    <div class = "nav-link-wrapper">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link activeLink">About Me</a>
+        <h2 class = "activeLink">Projects</h2>
+    </div>
     <div class = "nav-icons-wrapper">
         <a href="https://www.instagram.com/farmerakh/" class="nav-image" target="_blank">
             <img src="/images/linkImages/instagram-white-icon.svg" alt="Instagram" style="width: 30px; height: 30px;">
@@ -140,7 +248,16 @@
             <img src="\images\linkImages\github-mark-white.svg" alt="GitHub" style="width: 30px; height: 30px;">
         </a>
     </div>
+    <div class="dropdown">
+        <button class="dropbtn">&#9776</button>
+        <div class="dropdown-content">
+        <a href="/">Home</a>
+        <a href="/about">About Me</a>
+        <a href="/projects">Projects</a>
+        </div>
+    </div>
 </header>
+
 <main id="main-content">
     <div class = "projectFrame">
         <a href = "https://github.com/adamakh01/very-cool-website" class = "projectTitle" target="_blank">Adam Ho's Portfolio</a>
@@ -170,6 +287,17 @@
             A simple grade calculator that allows you to input your grades and calculate your overall grade. Can be done for multiple classes.
             Built using code.org and JavaScript.
         </p>
+    </div>
+    <div class = "nav-icons-wrapper-mobile">
+        <a href="https://www.instagram.com/farmerakh/" class="nav-image" target="_blank">
+            <img src="/images/linkImages/instagram-white-icon.svg" alt="Instagram" style="width: 30px; height: 30px;">
+        </a>
+        <a href="https://www.linkedin.com/in/adam-ho-a65786202" class="nav-image" target="_blank">
+            <img src="\images\linkImages\linkedin-app-white-icon.svg" alt="LinkedIn" style="width: 30px; height: 30px;">   
+        </a>
+        <a href="https://github.com/adamakh01" class="nav-image" target="_blank">
+            <img src="\images\linkImages\github-mark-white.svg" alt="GitHub" style="width: 30px; height: 30px;">
+        </a>
     </div>
 </main>
 <main>
