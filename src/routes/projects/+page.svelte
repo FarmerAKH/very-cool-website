@@ -200,7 +200,8 @@
             display:flex;
             flex-direction:row;
             position:relative;
-            top:40rem;
+            margin-top:40rem;
+            margin-bottom:10rem;
         }
     }
     @media (max-width:768px) {

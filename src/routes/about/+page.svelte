@@ -179,8 +179,9 @@
             position:relative;
         }
         .nav-icons-wrapper-mobile{
-            top:16rem;
+            margin-top:16rem;
             gap:0.5rem;
+            margin-bottom:10rem;
         }
     }
     @media (max-width:1700px) {

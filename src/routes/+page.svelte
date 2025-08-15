@@ -310,10 +310,11 @@
             left: 5%;
         }
         .nav-icons-wrapper-mobile{
-            margin-top:auto;
+            margin-top:16rem;
             display:flex;
             flex-direction:row;
             position:relative;
+            margin-bottom:10rem;
         }
         .dropbtn {
             background-color: #223A70;
