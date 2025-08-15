@@ -111,7 +111,6 @@
         color: #F6F6F6;
         position: fixed;
         height: calc(100vh - 6rem);
-        min-height: calc(100vh - 80px);
         width: 100vw;
         top: 6rem;
         left: 0;
