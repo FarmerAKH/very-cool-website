@@ -1,15 +1,15 @@
 <script>
     let slideIndex = 0;
     const images = [
-        { src: "/images/images/ohsu.JPG", alt: "OHSU"},
         { src: "/images/images/beachday.JPG", alt: "beachday" },
+        { src: "/images/images/ohsu.JPG", alt: "OHSU"},
         { src: "/images/images/arthistoryproject.JPG", alt: "Art History 101 Project" },
         { src: "/images/images/midwayMuseum.JPG", alt: "Midway Museum" },
         { src: "/images/images/rainyDay.JPG", alt: "Rainy Day" }
     ];
     const captions = [
-        "Oregon Health and Science University",
         "Beach Day 2024!",
+        "Oregon Health and Science University",
         "Art History 101 Photography Project",
         "USS Midway Museum New Years 2025",
         "Feels like Oregon"
