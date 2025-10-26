@@ -115,8 +115,7 @@
         top: 6rem;
         left: 0;
         overflow-y: auto;
-        overflow-x: hidden;
-        background: 
+        background:
         repeating-linear-gradient(
             135deg,
             #526fb1,
@@ -137,12 +136,17 @@
         border-radius:2rem;
         align-items: center;
         text-align:center;
+        box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
+        transition: transform 0.4s ease-in-out;
     }
     .introStatement{
         padding-top:0.5rem;
         font-size: 20px;
         font-weight: bold;
         color: #F6F6F6;
+    }
+    .intro:hover{
+        transform: scale(1.05);
     }
     .gallery{
         position:fixed;
@@ -157,6 +161,8 @@
         align-items: center;
         text-align: center;
         overflow: hidden;
+        box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
+        transition: transform 0.4s ease-in-out;
     }
     .galleryPic {
         width:70%;
@@ -205,18 +211,58 @@
     .recentProjects{
         display:flex;
         flex-direction: column;
-        align-content:center;
+        align-items: center;
         position:fixed;
         left:55px;
-        top:18rem;
+        top:28rem;
         box-sizing: border-box;
         width:500px;
-        height:540px;
+        height:350px;
+        margin-top: 2rem;
         font-family: Arial, Helvetica, sans-serif;
         background-color:#445b94;
         border-radius:2rem;
         text-align:center;
         padding: 1rem;
+        box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
+        transition: transform 0.4s ease-in-out;
+    }
+    .recentProjects:hover{
+        transform:scale(1.05);
+    }
+    .basicInfo{
+        position:fixed;
+        left:55px;
+        top:14rem;
+        box-sizing: border-box;
+        width:500px;
+        height:200px;
+        margin-top: 2rem;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color:#445b94;
+        border-radius:2rem;
+        text-align:center;
+        padding:1rem;
+        box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
+        transition: transform 0.4s ease-in-out;
+    }
+    .basicInfo:hover{
+        transform:scale(1.05);
+    }
+    .occupationLink{
+        display:block;
+        margin-bottom:1rem;
+        text-decoration: none;
+        transition:color 0.55s;
+        font-size: 15px;
+        max-width: 92%;;
+        margin-left:0;
+        margin-right:0;
+    }
+    .occupationLink:hover{
+        color:#F6F6F6;
+        text-decoration:underline;
+        text-decoration-color:#F6F6F6;
     }
     @media(max-width:819px){
         .gallery{
@@ -305,7 +351,7 @@
             flex-direction: column;
             align-items: center;
         }
-        .intro, .recentProjects {
+        .intro, .basicInfo, .recentProjects {
             margin-right:auto;
             width: 90%;
             left: 5%;
@@ -315,7 +361,8 @@
             display:flex;
             flex-direction:row;
             position:relative;
-            margin-bottom:10rem;
+            margin-top:5rem;
+            margin-bottom:5rem;
         }
         .dropbtn {
             background-color: #223A70;
@@ -356,6 +403,10 @@
             position:relative;
             top:-1.5rem;
         }
+        .basicInfo{
+            position:relative;
+            top:-0.5rem;
+        }
         .recentProjects{
             position:relative;
             top:-0.5rem;
@@ -395,6 +446,15 @@
         <h2 class = "introStatement">Hello! My name is Adam.</h2>
         <p>Feel free to take a look around! :D</p>
     </div>
+    <div class = "basicInfo">
+        <h2>My Occupation</h2>
+        <a href = "https://www.fullerton.edu/ecs/cs" class = "occupationLink" target="_blank">
+            Computer Science, B.S Undergraduate @ California State University, Fullerton
+        </a>
+        <a href = "https://www.fullerton.edu/si" class = "occupationLink" target="_blank">
+            Math Department Supplemental Instruction Leader @ California State University, Fullerton
+        </a>
+    </div>
     <div class = "gallery">
         <h2>My Gallery</h2>
         <img class="galleryPic" src={images[slideIndex].src} alt={images[slideIndex].alt}>
@@ -409,8 +469,8 @@
         <a href = "https://github.com/adamakh01/very-cool-website" class = "nav-link" target="_blank">
             Adam Ho's Portfolio
         </a>
-         <img src = "/images/projectImages/AdamHoPortfolio.png" alt = "Adam Ho's Portfolio" class = "projectPic" style = "position:relative; top:6%; width: 100%; height: auto; margin-bottom:2rem;">
-        <p class = "description" style="margin:0.5rem; padding:1rem;">
+         <img src = "/images/projectImages/AdamHoPortfolio.png" alt = "Adam Ho's Portfolio" class = "projectPic" style = "position:relative; top:6%; width: 60%; height: auto; margin-bottom:2rem;">
+        <p class = "description" style="margin:0rem;">
             Portfolio website showcasing my projects and skills, as well as present my contact info. Built with Sveltekit (HTML, CSS, and JavaScript).
         </p>
     </div>

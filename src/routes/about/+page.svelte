@@ -79,11 +79,14 @@
         color:#F6F6F6;
     }
     main#main-content {
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: calc(100vh - 6rem);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        padding-top: 0;
+        padding-top: 2rem;
         background: #526fb1;
         color: #F6F6F6;
         position: fixed;
@@ -101,13 +104,18 @@
     }
     .userPFP {
         position:relative;
-        left:-40%;
-        top: 20%;
         align-items:center;
         text-align:center;
         background-color:#445b94;
         padding:2rem;
+        width: 45rem;
         border-radius: 10px;
+        box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
+        transition: transform 0.4s ease-in-out;
+        margin-bottom: 2.5rem;
+    }
+    .userPFP:hover{
+       transform: scale(1.05);
     }
     .aboutMe {
         position:relative;
@@ -116,28 +124,57 @@
         width:85rem;
         padding:2rem;
         border-radius: 10px;
-        left:10%;
-        top:-450px;
+        box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
+        transition: transform 0.4s ease-in-out;
+        margin-bottom: 2.5rem;
     }
-    .courseFrame {
-        position:relative;
-        background-color:#445b94;
-        height: 25rem;
-        width:35rem;
-        padding:2rem;
-        border-radius: 10px;
-        left:-10%;
-        top:-26rem;
+    .aboutMe:hover{
+        transform: scale(1.05);
     }
+
     .languagesFrame {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
         position:relative;
         background-color:#445b94;
         height: 25rem;
-        width:35rem;
+        width:85rem;
         padding:2rem;
         border-radius: 10px;
-        left:30%;
-        top:-48.7rem;
+        box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
+        transition: transform 0.4s ease-in-out;
+        margin-bottom: 4rem;
+    }
+    .languageButtons{
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .languagesFrame:hover{
+        transform: scale(1.05);
+    }
+    .fake-button {
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        padding: 12px 24px;
+        background-color: #2c4477;
+        color: white;
+        font-family: sans-serif;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        user-select: none;
+        width: 5rem;
+        height: 5rem;
+        box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
+        transition: transform 0.4s ease-in-out;
+    }
+    .fake-button:hover {
+        transform: scale(1.1);
     }
     @media(min-width:768px){
         .dropbtn{
@@ -180,7 +217,8 @@
         .nav-icons-wrapper-mobile{
             margin-top:16rem;
             gap:0.5rem;
-            margin-bottom:10rem;
+            margin-top:5rem;
+            margin-bottom:5rem;
         }
     }
     @media (max-width:1700px) {
@@ -227,7 +265,7 @@
             overflow-x: hidden;
             height: calc(100vh - 6rem);
         }
-        .userPFP, .aboutMe, .courseFrame, .languagesFrame  {
+        .userPFP, .aboutMe, .languagesFrame  {
             margin-right:auto;
             width: 80%;
             left: 5%;
@@ -240,16 +278,17 @@
         .aboutMe{
             position:relative;
             height:auto;
-            margin-top:35rem;
+            margin-top:2.5rem;
         }
-        .courseFrame{
-            position:relative;
-            top:8rem;
+        .languageButtons{
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, 1fr);
         }
         .languagesFrame{
             position:relative;
-            margin-top:4rem;
-            margin-bottom:16px;
+            height: auto;
+            margin-top:2.5rem;
+            margin-bottom: 2.5rem;
         }
         
     }
@@ -292,39 +331,42 @@
         <p class = "aboutText" style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 1.5;">
             Hello. My name is Adam Ho, and I am currently a 2nd year student at California State University, Fullerton pursuing a degree in Computer Science.
             I enjoy programming and creating various projects that just come to mind randomly. Various projects I created are the HappyChild for Autism (not available on GitHub) Grade Calculator, and this website you are currently viewing. In addition, I am also part of the Association for Computing Machinery (ACM) at CSUF, 
-            where I am a member of the API Team in Open Source. Some notable tasks I did was creating a demo webpage so others can interact with the API, setting up the services for Announcements, and contributed to OpenDocs.
-            In addition to being a programmer, I am also a Supplemental Instruction Leader for the Math Department at CSUF, where I am assigned a math course and hold sessions to help students understand the material better, as well as getting better grades.
+            where I am a member of the API Team in Open Source. In addition to being a programmer, I am also a Supplemental Instruction Leader for the Math Department at CSUF, where I am assigned a math course and hold sessions to help students understand the material better, as well as getting better grades.
             In my free time, I like to play video games, watch various shows, and hanging out with friends.
             Some video games I enjoy playing are VALORANT, Minecraft, and OSU!. Most recently I became hooked on Tetris as it trains my thinking speed.
         </p>
-    </div>
-    <div class = "courseFrame">
-        <p class = "courseTaken" style="font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight:bold; line-height: 1.5;">
-            Applicable Courses:
-        </p>
-        <ul style = "font-family: Arial, Helvetica, sans-serif; font-size: 20px; line-height: 1.5; list-style-type: disc; padding-left: 20px;">
-            <li>AP Computer Science Principles</li>
-            <li>AP Computer Science A</li>
-            <li>AP Calculus AB</li>
-            <li>MATH 150B - Calculus II</li>
-            <li>MATH 250A - Calculus III</li>
-            <li>CPSC 121 - Object Oriented Programming</li>
-            <li>CPSC 131 - Data Structures</li>
-        </ul>
     </div>
     <div class = "languagesFrame">
         <p class = "languagesKnown" style="font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight:bold; line-height: 1.5;">
             Programming Languages and Toolkits:
         </p>
-            <ul style = "font-family: Arial, Helvetica, sans-serif; font-size: 20px; line-height: 1.5; list-style-type: disc; padding-left: 20px;">
-                <li>Java</li>
-                <li>Python</li>
-                <li>C++</li>
-                <li>HTML/CSS</li>
-                <li>JavaScript</li>
-                <li>SvelteKit (Toolkit)</li>
-                <li>Tkinter (Toolkit)</li>
-            </ul>
+        <div class = "languageButtons">
+            <div class = "fake-button">
+                Java
+            </div>
+            <div class = "fake-button">
+                Python
+            </div>
+            <div class = "fake-button">
+                C++
+            </div>
+            <div class = "fake-button">
+                HTML/CSS
+            </div>
+            <div class = "fake-button">
+                JavaScript
+            </div>
+            <div class = "fake-button">
+                Sveltekit
+            </div>
+            <div class = "fake-button">
+                Sveltekit (Toolkit)
+            </div>
+            <div class = "fake-button">
+                TKinter (Toolkit)
+            </div>
+        </div>
+
     </div>
     <div class = "nav-icons-wrapper-mobile">
         <a href="https://www.instagram.com/farmerakh/" class="nav-image" target="_blank">

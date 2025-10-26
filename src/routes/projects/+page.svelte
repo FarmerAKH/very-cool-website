@@ -77,37 +77,48 @@
         cursor: pointer;
     }
     main#main-content {
-        display: contents;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-top: 0;
-        background: #526fb1;
-        color: #F6F6F6;
-        position: fixed;
-        width: 100vw;
-        top: 6rem;
-        left: 0;
         overflow-y: auto;
         overflow-x: hidden;
         height: calc(100vh - 6rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 2rem;
+        background: #526fb1;
+        color: #F6F6F6;
+        position: fixed;
+        height: calc(100vh - 6rem);
+        width: 100vw;
+        top: 6rem;
+        left: 0;
+        background:repeating-linear-gradient(
+            135deg,
+            #526fb1,
+            #526fb1 40px,
+            #445b94 40px,
+            #445b94 42px
+        );
     }
     .projectFrame {
         display:flex;
         flex-direction:column;
         justify-content: center;
         position:relative;
-        left:35%;
-        top:7rem;
         box-sizing: border-box;
         width:500px;
         height:auto;
-        margin-top: 2rem;
         font-family: Arial, Helvetica, sans-serif;
         background-color:#445b94;
         border-radius:2rem;
         text-align:center;
         padding: 1rem;
+        margin-bottom:2.5rem;
+        box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
+        transition: transform 0.4s ease-in-out;
+    }
+    .projectFrame:hover{
+        transform: scale(1.05);
     }
     .projectDescription {
         font-family: Arial, Helvetica, sans-serif;
@@ -200,8 +211,8 @@
             display:flex;
             flex-direction:row;
             position:relative;
-            margin-top:40rem;
-            margin-bottom:10rem;
+            margin-top:5rem;
+            margin-bottom:5rem;
         }
     }
     @media (max-width:768px) {
@@ -215,11 +226,10 @@
             flex-direction:column;
             justify-content: center;
             position:relative;
-            top:36rem;
+            top:1rem;
             box-sizing: border-box;
             width:80%;
             height:auto;
-            margin-top: 2rem;
             font-family: Arial, Helvetica, sans-serif;
             background-color:#445b94;
             border-radius:2rem;
@@ -227,8 +237,6 @@
             padding: 1rem;
             left:5%;
         }
-    
-
     }
 </style>
 <header>
