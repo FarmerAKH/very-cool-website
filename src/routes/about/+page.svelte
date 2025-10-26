@@ -357,13 +357,13 @@
                 JavaScript
             </div>
             <div class = "fake-button">
-                Sveltekit
-            </div>
-            <div class = "fake-button">
                 Sveltekit (Toolkit)
             </div>
             <div class = "fake-button">
                 TKinter (Toolkit)
+            </div>
+            <div class = "fake-button">
+                
             </div>
         </div>
 
