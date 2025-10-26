@@ -2,9 +2,9 @@
 </script>
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 <style>
-    header{
+ header{
         position:fixed;
-        top:0;;
+        top:0;
         width:100vw;
         max-width: 100vw;
         height:6rem;
@@ -65,11 +65,17 @@
         position:relative;
         margin-left: auto;
         display: flex;
-        gap: 1rem;
+        gap: 0.5rem;
         align-items: center;
     }
     .nav-icons-wrapper-mobile{
         display:none;
+    }
+    .nav-image {
+        display: block;
+        width: 2.5rem;
+        height: 2.5rem;
+        cursor: pointer;
     }
     main{
         top:10px;
@@ -298,7 +304,7 @@
     <div class = "nav-link-wrapper">
         <a href="/" class="nav-link">Home</a>
         <h2 class = "activeLink">About Me</h2>
-        <a href="/projects" class="nav-link">Projects</a>
+        <a href="/projects" class="nav-link activeLink">Projects</a>
     </div>
     <div class = "nav-icons-wrapper">
         <a href="https://www.instagram.com/farmerakh/" class="nav-image" target="_blank">
