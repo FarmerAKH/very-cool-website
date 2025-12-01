@@ -270,6 +270,15 @@
         .gallery{
             display:none;
         }
+        .dropbtn{
+            display:none;
+        }
+        .dropdown{
+            display:none;
+        }
+        .dropdown-content{
+            display:none;
+        }
     }
     @media(min-width:768px){
         .dropbtn{
@@ -286,11 +295,15 @@
         main#main-content {
             display: flex;
             flex-direction: column;
+            align-items:center;
         }
-        .intro, .recentProjects, .gallery {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+        .intro, .basicInfo, .recentProjects, .gallery {
+            position: relative;
+            margin-bottom: 0rem;
+        }
+        .basicInfo{
+            margin-top: -9rem;
+            margin-bottom: 5rem;
         }
         .recentProjects{
             top:10rem;
