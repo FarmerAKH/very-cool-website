@@ -145,7 +145,6 @@
     .projectDescription{
         margin-top:3rem;
     }
-    
     @media(min-width:768px){
         .dropbtn{
             display:none;
@@ -157,7 +156,7 @@
             display:none;
         }
     }
-    @media (max-width:760px){
+    @media (max-width:767px){
         header {
             min-width:320px;
             overflow:visible;
