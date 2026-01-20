@@ -4,7 +4,7 @@
 <style>
     header{
         position:fixed;
-        top:0;;
+        top:0;
         width:100vw;
         max-width: 100vw;
         height:6rem;
@@ -65,11 +65,17 @@
         position:relative;
         margin-left: auto;
         display: flex;
-        gap: 1rem;
+        gap: 0.5rem;
         align-items: center;
     }
     .nav-icons-wrapper-mobile{
         display:none;
+    }
+    .nav-image {
+        display: block;
+        width: 2.5rem;
+        height: 2.5rem;
+        cursor: pointer;
     }
     main{
         top:10px;
@@ -81,7 +87,6 @@
     main#main-content {
         overflow-y: auto;
         overflow-x: hidden;
-        height: calc(100vh - 6rem);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -222,6 +227,7 @@
         }
     }
     @media (max-width:1700px) {
+        
         .dropbtn {
             background-color: #223A70;
             color: white;

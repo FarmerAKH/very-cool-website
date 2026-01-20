@@ -286,15 +286,29 @@
         main#main-content {
             display: flex;
             flex-direction: column;
+            align-items: center;
+            width: 100vw;
         }
-        .intro, .recentProjects, .gallery {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+        .intro, .basicInfo, .recentProjects {
+            position: relative;
+        }
+        .intro:hover, .recentProjects:hover {
+            transform:scale(1.05);
+        }
+        .intro{
+            position:relative;
+            top:0.5rem;
+        }
+        .basicInfo{
+            position:relative;
+            top:0.5rem;
         }
         .recentProjects{
-            top:10rem;
+            position:relative;
+            top:0.5rem;
+            height:auto;
         }
+
         .gallery{
             display:none;
             position:absolute;
